@@ -11,6 +11,8 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/ws").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/ws/player").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/ws/radio").setAllowedOriginPatterns("*").withSockJS();
     }
 
     @Override
@@ -18,4 +20,5 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         config.enableSimpleBroker("/topic");
         config.setApplicationDestinationPrefixes("/app");
     }
+
 }

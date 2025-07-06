@@ -9,7 +9,7 @@ import java.util.Map;
 @Controller
 public class SocketController {
 
-    @MessageMapping("/control")
+    @MessageMapping("/socket/control")
     @SendTo("/topic/control")
     public Map<String, Object> handleControl(Map<String, Object> message) {
         System.out.println("[WebSocket] Mensagem recebida: " + message);
